@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Builder | Offline</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>Resume Builder</h1><p>Create, customize and export your resume</p></div>
+  <span class="offline">● Offline-ready</span>
+</header>
+<main class="app">
+  <section class="editor">
+    <h2>Your details</h2>
+    <label>Full name<input id="name" placeholder="Your full name"></label>
+    <div class="two">
+      <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
+      <label>Phone<input id="phone" placeholder="+91 98765 43210"></label>
+    </div>
+    <label>Location<input id="address" placeholder="City, State"></label>
+    <label>Professional summary<textarea id="summary" rows="4" placeholder="A short introduction about you"></textarea></label>
+    <label>Education<textarea id="education" rows="4" placeholder="Degree | College | Year | CGPA"></textarea></label>
+    <label>Skills<textarea id="skills" rows="3" placeholder="Java, Python, SQL, HTML, CSS"></textarea></label>
+    <label>Projects<textarea id="projects" rows="5" placeholder="Project name — description and technologies"></textarea></label>
+    <label>Experience / Internships<textarea id="experience" rows="4" placeholder="Role | Organization | Dates | Responsibilities"></textarea></label>
+    <label>Certifications<textarea id="certifications" rows="3" placeholder="Certification name — issuer"></textarea></label>
+    <label>Template
+      <select id="templateSelect">
+        <option value="template1">Classic</option><option value="template2">Professional</option><option value="template3">Modern</option>
+      </select>
+    </label>
+    <div class="actions">
+      <button id="printBtn">Export / Print PDF</button>
+      <button class="secondary" id="saveBtn">Save data</button>
+      <button class="secondary" id="loadBtn">Load data</button>
+      <input type="file" id="fileInput" accept=".json,application/json" hidden>
+      <button class="secondary" id="resetBtn">Clear form</button>
+    </div>
+    <p class="hint">PDF tip: choose “Save as PDF” and paper size “A4” in the print dialog.</p>
+  </section>
+  <section class="preview-area">
+    <div class="preview-heading"><h2>Live A4 preview</h2><small>Drag sections to reorder</small></div>
+    <article id="resume" class="resume template1">
+      <header class="resume-header">
+        <h1 id="previewName">Your Name</h1>
+        <p id="previewContact"></p>
+      </header>
+      <section class="resume-section" draggable="true" data-section="summary"><h3>Professional Summary</h3><p id="previewSummary"></p></section>
+      <section class="resume-section" draggable="true" data-section="education"><h3>Education</h3><p id="previewEducation"></p></section>
+      <section class="resume-section" draggable="true" data-section="skills"><h3>Skills</h3><p id="previewSkills"></p></section>
+      <section class="resume-section" draggable="true" data-section="projects"><h3>Projects</h3><p id="previewProjects"></p></section>
+      <section class="resume-section" draggable="true" data-section="experience"><h3>Experience</h3><p id="previewExperience"></p></section>
+      <section class="resume-section" draggable="true" data-section="certifications"><h3>Certifications</h3><p id="previewCertifications"></p></section>
+    </article>
+  </section>
+</main>
+<footer>Resume Builder • Your information stays in your browser unless you export it.</footer>
+<script src="script.js"></script>
+</body>
+</html>
